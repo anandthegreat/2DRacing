@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class carMovement : MonoBehaviour {
+ 
+   
 	public float carSpeed;
 	Vector3 pos;
     uiManager obj;
@@ -25,6 +27,7 @@ public class carMovement : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D c){
 		if (c.gameObject.tag == "Enemy Car") {
+            
 			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
 			Destroy (gameObject);
             obj.GameOver();
